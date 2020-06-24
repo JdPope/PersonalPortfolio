@@ -1,49 +1,43 @@
-let fakeData = ['dog', 'cat', 'bird']
+const contactLink = document.querySelector('#contact')
 
-const link = document.querySelector('#Portfolio')
-console.log(link)
-
-
-link.addEventListener('click', ()=> makeCards())
-
-function makeCards(){
-   return fakeData.forEach(card => {
-       const p = document.createElement('p')
-       p.innerHTML = `<style>
-       .demo-card-wide.mdl-card {
-         width: 512px;
-       }
-       .demo-card-wide > .mdl-card__title {
-         color: #fff;
-         height: 176px;
-         background: url('../assets/demos/welcome_card.jpg') center / cover;
-       }
-       .demo-card-wide > .mdl-card__menu {
-         color: #fff;
-       }
-       </style>
-       
-       <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-         <div class="mdl-card__title">
-           <h2 class="mdl-card__title-text">Welcome</h2>
-         </div>
-         <div class="mdl-card__supporting-text">
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-           Mauris sagittis pellentesque lacus eleifend lacinia...
-         </div>
-         <div class="mdl-card__actions mdl-card--border">
-           <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-             Get Started
-           </a>
-         </div>
-         <div class="mdl-card__menu">
-           <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-             <i class="material-icons">share</i>
-           </button>
-         </div>
-       </div>`
-       document.body.append(p)
-   })
-}
-
-
+const contactContent = document.getElementById("scroll-tab-5")
+contactLink.addEventListener('click', ()=> contactContent.children[0].innerHTML = `<main class="mdl-layout__content">
+<div class="mdl-grid portfolio-max-width portfolio-contact">
+    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Contact</h2>
+        </div>
+        <div class="mdl-card__media">
+            <img class="article-image" src=" images/contact-image.jpg" border="0" alt="">
+        </div>
+        <div class="mdl-card__supporting-text">
+            <p>
+                Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+            </p>
+            <p>
+                Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim eiusmod labore sit amet.
+            </p>
+            <form action="#" class="">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name">
+                    <label class="mdl-textfield__label" for="Name">Name...</label>
+                    <span class="mdl-textfield__error">Letters and spaces only</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="Email">
+                    <label class="mdl-textfield__label" for="Email">Email...</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <textarea class="mdl-textfield__input" type="text" rows="5" id="note"></textarea>
+                    <label class="mdl-textfield__label" for="note">Enter note</label>
+                </div>
+                <p>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                        Submit
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+</main>`)
